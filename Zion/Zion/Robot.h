@@ -1,5 +1,5 @@
-#ifndef ROBOT_A
-#define ROBOT_A
+#ifndef ZION_ROBOT_H
+#define ZION_ROBOT_H
 
 class Arena;
 

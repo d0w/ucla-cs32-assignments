@@ -1,34 +1,21 @@
-// zion_solution.cpp
-
+#include "Game.h"
+#include "Game.h"
+#include "Arena.h"
+#include "Arena.h"
+#include "Previous.h"
+#include "Previous.h"
+#include "Player.h"
+#include "Player.h"
+#include "Robot.h"
 #include "Robot.h"
 #include "globals.h"
-#include "Arena.h"
-#include "Player.h"
-#include "Game.h"
+#include "globals.h"
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <ctime>
-
-
 using namespace std;
-
-
-
-
-///////////////////////////////////////////////////////////////////////////
-// Type definitions
-///////////////////////////////////////////////////////////////////////////
-
-class Arena;  // This is needed to let the compiler know that Arena is a
-              // type name, since it's mentioned in the Robot declaration.
-
-
-///////////////////////////////////////////////////////////////////////////
-//  main()
-///////////////////////////////////////////////////////////////////////////
-
 int main()
 {
     // Initialize the random number generator.  (You don't need to

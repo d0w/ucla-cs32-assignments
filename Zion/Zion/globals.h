@@ -1,5 +1,5 @@
-#ifndef CONSTANTS
-#define CONSTANTS
+#ifndef ZION_GLOBALS_H
+#define ZION_GLOBALS_H
 
 
 

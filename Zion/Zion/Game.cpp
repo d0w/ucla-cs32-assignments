@@ -42,6 +42,10 @@ Game::Game(int rows, int cols, int nRobots)
         m_arena->addRobot(r, c);
         nRobots--;
     }
+    Previous& x = m_arena->thePrevious();
+    x.showPreviousMoves();
+    cout << "Press Enter to Continue" << endl;
+    cin.ignore(10000, '\n');
 }
 
 Game::~Game()
@@ -63,11 +67,12 @@ void Game::play()
         m_arena->display(msg);
         msg = "";
         cout << endl;
-        cout << "Move (u/d/l/r/su/sd/sl/sr/c/q): ";
+        cout << "Move (u/d/l/r/su/sd/sl/sr/c/p/q): ";
         string action;
         getline(cin, action);
-        if (action.size() == 0)
+        if (action.size() == 0) {
             p->stand();
+        }
         else
         {
             switch (action[0])
@@ -77,6 +82,11 @@ void Game::play()
                 continue;
             case 'q':
                 return;
+            case 'p': 
+                m_arena->thePrevious().showPreviousMoves();
+                cout << "Press Enter to Continue" << endl;
+                cin.ignore(10000, '\n');
+                continue;
             case 'c':  // computer moves player
                 msg = p->takeComputerChosenTurn();
                 break;

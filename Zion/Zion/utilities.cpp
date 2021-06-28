@@ -1,4 +1,12 @@
+#include <algorithm>
+#include <utility>
+#include <cctype>
+#include <iostream>
 
+#include "globals.h"
+#include "Arena.h"
+
+using namespace std;
 
 
 #ifdef _MSC_VER  //  Microsoft Visual C++

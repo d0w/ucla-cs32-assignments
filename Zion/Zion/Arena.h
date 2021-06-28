@@ -1,10 +1,10 @@
-#ifndef ARENA_H
-#define ARENA_H
+#ifndef ZION_ARENA_H
+#define ZION_ARENA_H
 
-#include <string>
+
 #include "globals.h"
-
-using namespace std;
+#include "Previous.h"
+#include <string>
 
 class Player;
 class Robot;
@@ -22,7 +22,8 @@ public:
     Player* player() const;
     int     robotCount() const;
     int     nRobotsAt(int r, int c) const;
-    void    display(string msg) const;
+    void    display(std::string msg) const;
+    Previous& thePrevious();
 
     // Mutators
     bool   addRobot(int r, int c);
@@ -36,6 +37,7 @@ private:
     Player* m_player;
     Robot* m_robots[MAXROBOTS];
     int     m_nRobots;
+    Previous m_previous;
 };
-
 #endif
+

@@ -13,7 +13,7 @@ using namespace std;
 //  Arena implementations
 ///////////////////////////////////////////////////////////////////////////
 
-Arena::Arena(int nRows, int nCols)
+Arena::Arena(int nRows, int nCols) : m_previous(nRows, nCols)
 {
     if (nRows <= 0 || nCols <= 0 || nRows > MAXROWS || nCols > MAXCOLS)
     {
@@ -66,6 +66,11 @@ int Arena::nRobotsAt(int r, int c) const
     return count;
 }
 
+Previous& Arena::thePrevious() {
+    return m_previous;
+}
+
+
 void Arena::display(string msg) const
 {
     // Position (row,col) in the arena coordinate system is represented in
@@ -102,7 +107,10 @@ void Arena::display(string msg) const
             gridChar = '@';
         else
             gridChar = '*';
+
+        
     }
+
 
     // Draw the grid
     clearScreen();
@@ -176,7 +184,7 @@ bool Arena::moveRobots()
         if (rp->row() == m_player->row() && rp->col() == m_player->col())
             m_player->setDead();
     }
-
+    
     // return true if the player is still alive, false otherwise
     return !m_player->isDead();
 }

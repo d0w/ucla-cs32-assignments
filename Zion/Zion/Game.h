@@ -1,5 +1,5 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef ZION_GAME_H
+#define ZION_GAME_H
 
 class Arena;
 

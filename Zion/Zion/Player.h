@@ -1,8 +1,7 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef ZION_PLAYER_H
+#define ZION_PLAYER_H
 
 #include <string>
-using namespace std;
 
 class Arena;
 
@@ -19,7 +18,7 @@ public:
     bool isDead() const;
 
     // Mutators
-    string takeComputerChosenTurn();
+    std::string takeComputerChosenTurn();
     void   stand();
     void   move(int dir);
     bool   shoot(int dir);

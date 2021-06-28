@@ -154,6 +154,7 @@ string Player::takeComputerChosenTurn()
 void Player::stand()
 {
     m_age++;
+    m_arena->thePrevious().dropACrumb(row(), col());
 }
 
 void Player::move(int dir)
@@ -166,6 +167,7 @@ void Player::move(int dir)
     case LEFT:   if (m_col > 1)               m_col--; break;
     case RIGHT:  if (m_col < m_arena->cols()) m_col++; break;
     }
+    m_arena->thePrevious().dropACrumb(row(), col());
 }
 
 bool Player::shoot(int dir)
