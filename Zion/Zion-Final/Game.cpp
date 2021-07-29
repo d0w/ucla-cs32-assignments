@@ -42,10 +42,6 @@ Game::Game(int rows, int cols, int nRobots)
         m_arena->addRobot(r, c);
         nRobots--;
     }
-    Previous& x = m_arena->thePrevious();
-    x.showPreviousMoves();
-    cout << "Press Enter to Continue" << endl;
-    cin.ignore(10000, '\n');
 }
 
 Game::~Game()
